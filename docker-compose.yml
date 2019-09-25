@@ -15,11 +15,19 @@ services:
         image: mysql:5.7
         environment:
             MYSQL_ROOT_PASSWORD: delldell
-            MYSQL_DATABASE: temp
         volumes:
             - dbdata:/var/lib/mysql
         ports:
             - 3306:3306
+    duing:
+        image: kairops/duing
+        ports:
+          - 3389:3389
+        shm_size: 1g
+        privileged: true
+        volumes:
+            - ./features:/opt/duingdemo/ci-scripts/test/cucumber/features
+            - ./reports:/opt/duingdemo/ci-scripts/test/cucumber/reports
 volumes:
     dbdata:
     maven_cache:
