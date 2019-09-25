@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+    app:
+        build: .
+        entrypoint: [ "/entrypoint.sh" ]
+        volumes:
+            - maven_cache:/root/.m2
+            - npm_cache:/root/.npm
+            - node_modules_cache:/workspace/frontend/src/main/frontend/node/node_modules
+        ports:
+            - 8080:8080
+            - 4200:4200
+    db:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: delldell
+            MYSQL_DATABASE: temp
+        volumes:
+            - dbdata:/var/lib/mysql
+        ports:
+            - 3306:3306
+volumes:
+    dbdata:
+    maven_cache:
+    node_modules_cache:
+    npm_cache:
