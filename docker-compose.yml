@@ -26,8 +26,8 @@ services:
         shm_size: 1g
         privileged: true
         volumes:
-            - ./features:/opt/duingdemo/ci-scripts/test/cucumber/features
-            - ./reports:/opt/duingdemo/ci-scripts/test/cucumber/reports
+            - ./test/features:/opt/duingdemo/ci-scripts/test/cucumber/features
+            - ./test/reports:/opt/duingdemo/ci-scripts/test/cucumber/reports
 volumes:
     dbdata:
     maven_cache:
