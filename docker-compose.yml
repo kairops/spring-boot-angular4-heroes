@@ -7,7 +7,7 @@ services:
         volumes:
             - maven_cache:/root/.m2
             - npm_cache:/root/.npm
-            - node_modules_cache:/workspace/frontend/src/main/frontend/node/node_modules
+            - node_cache:/workspace/frontend/src/main/frontend/node
         ports:
             - 8080:8080
             - 4200:4200
@@ -31,5 +31,5 @@ services:
 volumes:
     dbdata:
     maven_cache:
-    node_modules_cache:
+    node_cache:
     npm_cache:
