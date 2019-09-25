@@ -30,4 +30,4 @@ mvn spring-boot:run &
 
 # Frontend start
 cd /workspace/frontend/src/main/frontend
-ng serve --o
+ng serve --host 0.0.0.0 --o
