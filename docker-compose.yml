@@ -20,7 +20,7 @@ services:
         ports:
             - 3306:3306
     duing:
-        image: kairops/duing
+        build: duing
         ports:
           - 3389:3389
         shm_size: 1g
